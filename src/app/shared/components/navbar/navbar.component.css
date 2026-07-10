@@ -1,0 +1,157 @@
+/* ===== MDM Navbar — estilo industrial ===== */
+/* Paleta: Azul #111184 | Amarelo #FFDE21 | Cinza claro #F8FAFC */
+
+.mdm-navbar {
+  background-color: #111184;
+  border-bottom: 4px solid #FFDE21;
+  border-radius: 0; /* sem cantos arredondados */
+  min-height: 64px;
+}
+
+.mdm-brand {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.mdm-brand-dot {
+  color: #FFDE21;
+}
+
+.mdm-toggler {
+  border: 2px solid #FFFFFF;
+  border-radius: 0;
+}
+
+.mdm-toggler:focus {
+  box-shadow: 0 0 0 2px #FFDE21;
+}
+
+/* Categorias */
+.mdm-categories-btn {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.mdm-categories-btn:hover,
+.mdm-categories-btn:focus {
+  background-color: #0A0A6B;
+  color: #FFFFFF;
+}
+
+.mdm-dropdown-menu {
+  border-radius: 0;
+  border: 2px solid #111184;
+  padding: 0;
+}
+
+.mdm-dropdown-item {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  color: #111184;
+}
+
+.mdm-dropdown-item:hover,
+.mdm-dropdown-item:focus {
+  background-color: #FFDE21;
+  color: #111184;
+}
+
+/* Busca */
+.mdm-search-input {
+  border: 2px solid #0A0A6B;
+  border-right: none;
+  border-radius: 0;
+  font-size: 0.9rem;
+  height: 38px;
+}
+
+.mdm-search-input:focus {
+  box-shadow: none;
+  border-color: #0A0A6B;
+}
+
+.mdm-search-btn {
+  background-color: #FFDE21;
+  border: 2px solid #0A0A6B;
+  border-left: none;
+  border-radius: 0;
+  color: #111184;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mdm-search-btn:hover {
+  background-color: #E8C81E;
+  color: #111184;
+}
+
+/* Nav links (carrinho / login) */
+.mdm-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mdm-nav-link:hover {
+  color: #FFDE21;
+}
+
+.mdm-divider {
+  border-left: 2px solid #3A3AA0;
+  padding-left: 1rem;
+}
+
+.mdm-cart-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.mdm-cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  background-color: #FFDE21;
+  color: #0A0A6B;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 16px;
+  text-align: center;
+  padding: 1px 4px;
+  border-radius: 0;
+}
+
+/* Mobile: colapsa categorias/carrinho/login, mantém busca visível */
+@media (max-width: 991.98px) {
+  .mdm-divider {
+    border-left: none;
+    padding-left: 0;
+    border-top: 2px solid #3A3AA0;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .mdm-categories {
+    margin-bottom: 0.5rem;
+  }
+
+  .mdm-search-form {
+    order: -1;
+  }
+}
