@@ -1,0 +1,197 @@
+/* ===== MDM Store Page — estilo industrial ===== */
+/* Paleta: Azul #111184 | Amarelo #FFDE21 | Cinza claro #F8FAFC */
+
+/* Cabeçalho */
+.mdm-store-header {
+  position: relative;
+}
+
+.mdm-store-cover {
+  height: 160px;
+  background-color: #3A3AA0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 4px solid #FFDE21;
+}
+
+.mdm-store-logo {
+  position: absolute;
+  top: 124px;
+  left: 24px;
+  width: 88px;
+  height: 88px;
+  background-color: #111184;
+  border: 3px solid #FFDE21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFDE21;
+  font-weight: 700;
+  font-size: 1.625rem;
+  overflow: hidden;
+}
+
+.mdm-store-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.mdm-store-info {
+  padding: 48px 24px 20px 132px;
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #111184;
+}
+
+.mdm-store-name {
+  color: #111184;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.mdm-store-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.mdm-store-rating i {
+  color: #FFDE21;
+  font-size: 0.8rem;
+}
+
+.mdm-store-rating-value {
+  color: #5A5A7A;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/* Filtro de categorias */
+.mdm-category-filter {
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #E5E7EB;
+}
+
+.mdm-category-filter-inner {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 16px 24px;
+}
+
+.mdm-filter-pill {
+  background-color: #FFFFFF;
+  color: #111184;
+  border: 2px solid #111184;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.mdm-filter-pill.active {
+  background-color: #111184;
+  color: #FFFFFF;
+}
+
+/* Grade de produtos */
+.mdm-products-section {
+  padding: 20px 24px;
+}
+
+.mdm-product-card {
+  background-color: #FFFFFF;
+  border: 2px solid #111184;
+  border-radius: 0;
+  height: 100%;
+}
+
+.mdm-product-card.mdm-out-of-stock {
+  opacity: 0.6;
+}
+
+.mdm-product-image {
+  position: relative;
+  height: 100px;
+  background-color: #FFFFFF;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #111184;
+}
+
+.mdm-product-placeholder {
+  color: #9CA3AF;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.mdm-out-of-stock-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #111184;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+}
+
+.mdm-product-info {
+  padding: 10px;
+}
+
+.mdm-product-name {
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  min-height: 2.6em;
+}
+
+.mdm-product-price {
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.mdm-product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mdm-product-price-old {
+  color: #9CA3AF;
+  font-size: 0.7rem;
+  text-decoration: line-through;
+}
+
+.mdm-empty-state {
+  background-color: #FFFFFF;
+  border: 2px dashed #111184;
+  padding: 32px;
+  text-align: center;
+  color: #5A5A7A;
+  font-size: 0.9rem;
+}
+
+.mdm-not-found {
+  padding: 48px 24px;
+  text-align: center;
+  color: #111184;
+}

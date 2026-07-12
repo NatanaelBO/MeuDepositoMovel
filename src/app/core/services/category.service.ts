@@ -1,40 +1,25 @@
 import { Injectable } from '@angular/core';
 
-export interface Store {
-  id: string;
+export interface Category {
+  id: string;     // slug usado para filtro, ex: 'ceramica'
   name: string;
-  initials: string;     // usado como placeholder do logo, ex: 'FC'
-  logoPath?: string;     // caminho da logo real, ex: 'assets/stores/ferreira-costa.png' — deixe undefined até ter a imagem
-  coverPath?: string;    // imagem de capa do card — mesma lógica do logo
-  rating: number;        // 0 a 5, ex: 4.5
+  icon: string;    // classe do Bootstrap Icons, ex: 'bi-bricks'
+  link: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class StoreService {
-  private readonly stores: Store[] = [
-    {
-      id: 'ferreira-costa',
-      name: 'Ferreira Costa',
-      initials: 'FC',
-      logoPath: 'stores/ferreira-costa.svg',
-      rating: 4.5
-    },
-    {
-      id: 'fazendao',
-      name: 'Fazendão',
-      initials: 'FZ',
-      logoPath: 'stores/fazendao.png',
-      rating: 4.0
-    }
+export class CategoryService {
+  // Fonte única da verdade — usada pela Navbar (dropdown) e pela CategoryGrid (Home)
+  private readonly categories: Category[] = [
+    { id: 'alvenaria', name: 'Alvenaria', icon: 'bi-bricks', link: '/produtos/alvenaria' },
+    { id: 'ceramica', name: 'Cerâmica', icon: 'bi-grid-3x3-gap-fill', link: '/produtos/ceramica' },
+    { id: 'pintura', name: 'Pintura', icon: 'bi-paint-bucket', link: '/produtos/pintura' },
+    { id: 'ferramentas', name: 'Ferramentas', icon: 'bi-tools', link: '/produtos/ferramentas' }
   ];
 
-  getStores(): Store[] {
-    return this.stores;
-  }
-
-  getStoreById(id: string): Store | undefined {
-    return this.stores.find(store => store.id === id);
+  getCategories(): Category[] {
+    return this.categories;
   }
 }

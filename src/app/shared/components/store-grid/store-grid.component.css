@@ -10,6 +10,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .mdm-heading-bar {
@@ -25,6 +26,41 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
+}
+
+.mdm-filter-label {
+  color: #5A5A7A;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 0.9rem;
+  letter-spacing: normal;
+}
+
+.mdm-clear-filter {
+  margin-left: auto;
+  background: none;
+  border: 2px solid #111184;
+  color: #111184;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.mdm-clear-filter:hover {
+  background-color: #111184;
+  color: #FFFFFF;
+}
+
+.mdm-empty-state {
+  background-color: #FFFFFF;
+  border: 2px dashed #111184;
+  padding: 32px;
+  text-align: center;
+  color: #5A5A7A;
+  font-size: 0.9rem;
 }
 
 .mdm-store-card {
@@ -71,7 +107,7 @@
 .mdm-store-logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* mostra a logo inteira, sem cortar (funciona bem pra logos retangulares) */
+  object-fit: contain;
   padding: 4px;
 }
 

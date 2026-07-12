@@ -3,10 +3,22 @@
 
     <div class="mdm-section-heading">
       <span class="mdm-heading-bar"></span>
-      <h2 class="mdm-heading-title">Lojas</h2>
+      <h2 class="mdm-heading-title">
+        Lojas
+        <span *ngIf="activeCategoryName" class="mdm-filter-label">
+          em {{ activeCategoryName }}
+        </span>
+      </h2>
+      <button
+        *ngIf="activeCategoryId"
+        type="button"
+        class="mdm-clear-filter"
+        (click)="clearFilter()">
+        Limpar filtro ✕
+      </button>
     </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 g-3">
+    <div class="row row-cols-1 row-cols-sm-2 g-3" *ngIf="stores.length > 0; else emptyState">
       <div class="col" *ngFor="let store of stores">
         <a [routerLink]="['/loja', store.id]" class="mdm-store-card">
 
@@ -32,6 +44,12 @@
         </a>
       </div>
     </div>
+
+    <ng-template #emptyState>
+      <div class="mdm-empty-state">
+        Nenhuma loja encontrada para essa categoria ainda.
+      </div>
+    </ng-template>
 
   </div>
 </section>
