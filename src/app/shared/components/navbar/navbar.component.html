@@ -29,7 +29,7 @@
         </button>
         <ul class="dropdown-menu mdm-dropdown-menu" aria-labelledby="categoriesDropdown">
           <li *ngFor="let categoria of categories">
-            <a class="dropdown-item mdm-dropdown-item" href="#">{{ categoria }}</a>
+            <a class="dropdown-item mdm-dropdown-item" [routerLink]="categoria.link">{{ categoria.name }}</a>
           </li>
         </ul>
       </div>
