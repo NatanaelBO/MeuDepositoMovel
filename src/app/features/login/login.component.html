@@ -1,0 +1,49 @@
+<div class="mdm-auth-page">
+  <div class="mdm-auth-card">
+
+    <div class="mdm-auth-header">
+      <h1 class="mdm-auth-title">Entrar</h1>
+    </div>
+
+    <form class="mdm-auth-form" (ngSubmit)="onSubmit()">
+
+      <div class="mdm-hint">
+        Use para teste: teste&#64;mdm.com / 123456
+      </div>
+
+      <label class="mdm-label" for="email">E-mail</label>
+      <input
+        id="email"
+        type="email"
+        class="mdm-input"
+        placeholder="seuemail@exemplo.com"
+        [(ngModel)]="email"
+        name="email"
+        required>
+
+      <label class="mdm-label" for="password">Senha</label>
+      <input
+        id="password"
+        type="password"
+        class="mdm-input"
+        placeholder="••••••••"
+        [(ngModel)]="password"
+        name="password"
+        required>
+
+      <div class="mdm-error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="mdm-submit-btn">
+        Entrar
+      </button>
+
+      <div class="mdm-auth-footer">
+        Não tem conta? <a routerLink="/cadastro">Cadastre-se</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>

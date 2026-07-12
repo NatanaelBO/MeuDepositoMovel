@@ -1,0 +1,149 @@
+/* ===== MDM Auth (Login) — estilo industrial ===== */
+/* Paleta: Azul #111184 | Amarelo #FFDE21 | Cinza claro #F8FAFC */
+
+.mdm-auth-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background-color: #F8FAFC;
+}
+
+.mdm-auth-card {
+  width: 100%;
+  max-width: 380px;
+  background-color: #FFFFFF;
+  border: 2px solid #111184;
+}
+
+.mdm-auth-header {
+  background-color: #111184;
+  border-bottom: 4px solid #FFDE21;
+  padding: 16px 24px;
+}
+
+.mdm-auth-title {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.mdm-auth-form {
+  padding: 24px;
+}
+
+.mdm-label {
+  display: block;
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 6px;
+}
+
+.mdm-input {
+  width: 100%;
+  border: 2px solid #111184;
+  border-radius: 0;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  color: #111184;
+}
+
+.mdm-input:focus {
+  outline: none;
+  border-color: #FFDE21;
+  box-shadow: 0 0 0 2px rgba(255, 222, 33, 0.3);
+}
+
+.mdm-error {
+  background-color: #FDECEC;
+  border: 2px solid #D32F2F;
+  color: #D32F2F;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+}
+
+.mdm-hint {
+  background-color: #FFF9E5;
+  border: 2px solid #FFDE21;
+  color: #7A6600;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+}
+
+.mdm-submit-btn {
+  width: 100%;
+  background-color: #FFDE21;
+  color: #0A0A6B;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 12px;
+  border: 2px solid #0A0A6B;
+  border-radius: 0;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+.mdm-submit-btn:hover:not(:disabled) {
+  background-color: #E8C81E;
+}
+
+.mdm-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mdm-auth-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #5A5A7A;
+}
+
+.mdm-auth-footer a {
+  color: #111184;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Checkbox LGPD (usado no Cadastro) */
+.mdm-consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mdm-consent-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #111184;
+  border-radius: 0;
+  flex-shrink: 0;
+  margin-top: 1px;
+  accent-color: #111184;
+}
+
+.mdm-consent-text {
+  font-size: 0.7rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.mdm-consent-text a {
+  color: #111184;
+  font-weight: 700;
+  text-decoration: underline;
+}

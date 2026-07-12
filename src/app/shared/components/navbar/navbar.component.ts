@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CategoryService, Category } from '../../../core/services/category.service';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,13 +14,15 @@ import { CategoryService, Category } from '../../../core/services/category.servi
 })
 export class NavbarComponent {
   cartItemCount = 0; // TODO: conectar ao CartService
-  isLoggedIn = false; // TODO: conectar ao AuthService
 
   categories: Category[];
 
   searchTerm = '';
 
-  constructor(private categoryService: CategoryService) {
+  constructor(
+    private categoryService: CategoryService,
+    public authService: AuthService
+  ) {
     this.categories = this.categoryService.getCategories();
   }
 
@@ -29,5 +32,9 @@ export class NavbarComponent {
     }
     // TODO: navegar para /produtos?busca=searchTerm
     console.log('Buscando por:', this.searchTerm);
+  }
+
+  onLogout(): void {
+    this.authService.logout();
   }
 }

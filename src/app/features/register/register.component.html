@@ -1,0 +1,60 @@
+<div class="mdm-auth-page">
+  <div class="mdm-auth-card">
+
+    <div class="mdm-auth-header">
+      <h1 class="mdm-auth-title">Criar Conta</h1>
+    </div>
+
+    <form class="mdm-auth-form" (ngSubmit)="onSubmit()">
+
+      <label class="mdm-label" for="email">E-mail</label>
+      <input
+        id="email"
+        type="email"
+        class="mdm-input"
+        placeholder="seuemail@exemplo.com"
+        [(ngModel)]="email"
+        name="email"
+        required>
+
+      <label class="mdm-label" for="password">Senha</label>
+      <input
+        id="password"
+        type="password"
+        class="mdm-input"
+        placeholder="Mínimo 6 caracteres"
+        [(ngModel)]="password"
+        name="password"
+        required>
+
+      <div class="mdm-consent-row">
+        <input
+          type="checkbox"
+          id="lgpdConsent"
+          class="mdm-consent-checkbox"
+          [(ngModel)]="acceptedLgpd"
+          name="acceptedLgpd">
+        <label for="lgpdConsent" class="mdm-consent-text">
+          Li e aceito os <a routerLink="/termos-de-uso">Termos de Uso</a> e a
+          <a routerLink="/politica-privacidade"> Política de Privacidade</a>,
+          e autorizo o tratamento dos meus dados pessoais conforme a
+          Lei Geral de Proteção de Dados (LGPD).
+        </label>
+      </div>
+
+      <div class="mdm-error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="mdm-submit-btn" [disabled]="!acceptedLgpd">
+        Criar Conta
+      </button>
+
+      <div class="mdm-auth-footer">
+        Já tem conta? <a routerLink="/login">Entrar</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
