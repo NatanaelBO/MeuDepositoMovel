@@ -1,0 +1,48 @@
+<div class="container">
+  <div
+  id="mdmHeroCarousel"
+  class="carousel slide mdm-carousel"
+  data-bs-ride="carousel"
+  [attr.data-bs-interval]="autoplayInterval">
+
+  <!-- Indicadores (só pontos, sem setas) -->
+  <div class="carousel-indicators mdm-indicators">
+    <button
+      *ngFor="let slide of slides; let i = index"
+      type="button"
+      data-bs-target="#mdmHeroCarousel"
+      [attr.data-bs-slide-to]="i"
+      [class.active]="i === 0"
+      [attr.aria-current]="i === 0 ? 'true' : null"
+      [attr.aria-label]="'Slide ' + (i + 1)">
+    </button>
+  </div>
+
+  <div class="carousel-inner">
+    <div
+      class="carousel-item mdm-carousel-item"
+      *ngFor="let slide of slides; let i = index"
+      [class.active]="i === 0">
+
+      <div
+        class="mdm-slide-bg"
+        [style.background-image]="'url(' + slide.imagePath + ')'">
+      </div>
+
+      <div class="mdm-slide-overlay">
+        <div class="mdm-slide-content">
+          <span class="mdm-slide-badge">{{ slide.badge }}</span>
+          <h2 class="mdm-slide-title">{{ slide.title }}</h2>
+          <p class="mdm-slide-subtitle">{{ slide.subtitle }}</p>
+          <a class="btn mdm-slide-cta" [routerLink]="slide.ctaLink">
+            {{ slide.ctaLabel }}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</div>

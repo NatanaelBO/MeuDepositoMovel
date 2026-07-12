@@ -1,0 +1,133 @@
+/* ===== MDM Carousel — estilo industrial ===== */
+/* Paleta: Azul #111184 | Amarelo #FFDE21 | Cinza claro #F8FAFC */
+
+.mdm-carousel {
+  width: 100%;
+  border: 4px solid #0A0A6B;
+  border-radius: 0; /* sem cantos arredondados */
+  overflow: hidden;
+}
+
+.mdm-carousel-item {
+  position: relative;
+  height: 360px;
+  background-color: #111184; /* fallback enquanto a imagem carrega/se faltar */
+}
+
+.mdm-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 50%;
+  background-position: center;
+   background-repeat: no-repeat;
+  background-color: #3A3AA0; /* aparece se a imagem não existir ainda */
+}
+
+/* Overlay para garantir legibilidade do texto sobre a imagem  */
+/* (opacidade sólida à esquerda, sem gradiente decorativo) */
+.mdm-slide-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 17, 132, 0.95) 0%,
+    rgba(17, 17, 132, 0.75) 45%,
+    rgba(17, 17, 132, 0.15) 100%
+  );
+}
+
+.mdm-slide-content {
+  padding: 0 48px;
+  max-width: 480px;
+}
+
+.mdm-slide-badge {
+  display: inline-block;
+  background-color: #FFDE21;
+  color: #0A0A6B;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 0;
+  margin-bottom: 12px;
+}
+
+.mdm-slide-title {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.85rem;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.mdm-slide-subtitle {
+  color: #E8E8FF;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.mdm-slide-cta {
+  background-color: #FFDE21;
+  color: #0A0A6B;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 2px solid #0A0A6B;
+  border-radius: 0;
+  padding: 10px 24px;
+}
+
+.mdm-slide-cta:hover {
+  background-color: #E8C81E;
+  color: #0A0A6B;
+}
+
+/* Indicadores — só pontos, quadrados/retos, ativo em amarelo */
+.mdm-indicators {
+  margin-bottom: 16px;
+  z-index: 2;
+}
+
+.mdm-indicators [data-bs-target] {
+  width: 14px;
+  height: 6px;
+  border-radius: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  margin: 0 4px;
+}
+
+.mdm-indicators [data-bs-target].active {
+  background-color: #FFDE21;
+  width: 32px;
+}
+
+/* Responsivo: reduz altura e texto em telas menores */
+@media (max-width: 767.98px) {
+  .mdm-carousel-item {
+    height: 280px;
+  }
+
+  .mdm-slide-content {
+    padding: 0 24px;
+    max-width: 100%;
+  }
+
+  .mdm-slide-title {
+    font-size: 1.3rem;
+  }
+
+  .mdm-slide-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .mdm-slide-overlay {
+    background: rgba(17, 17, 132, 0.85);
+  }
+}
