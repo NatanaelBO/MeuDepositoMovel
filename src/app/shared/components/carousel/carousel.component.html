@@ -1,9 +1,8 @@
 <div class="container">
   <div
+  #carouselElement
   id="mdmHeroCarousel"
-  class="carousel slide mdm-carousel"
-  data-bs-ride="carousel"
-  [attr.data-bs-interval]="autoplayInterval">
+  class="carousel slide mdm-carousel">
 
   <!-- Indicadores (só pontos, sem setas) -->
   <div class="carousel-indicators mdm-indicators">
@@ -34,9 +33,6 @@
           <span class="mdm-slide-badge">{{ slide.badge }}</span>
           <h2 class="mdm-slide-title">{{ slide.title }}</h2>
           <p class="mdm-slide-subtitle">{{ slide.subtitle }}</p>
-          <a class="btn mdm-slide-cta" [routerLink]="slide.ctaLink">
-            {{ slide.ctaLabel }}
-          </a>
         </div>
       </div>
 

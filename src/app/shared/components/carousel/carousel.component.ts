@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+// O Bootstrap JS é carregado globalmente via <script> (angular.json), não como módulo ES —
+// por isso declaramos a variável global "bootstrap" aqui para o TypeScript não reclamar.
+declare var bootstrap: any;
 
 export interface CarouselSlide {
   badge: string;
@@ -18,7 +22,8 @@ export interface CarouselSlide {
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })
-export class CarouselComponent {
+export class CarouselComponent implements AfterViewInit {
+  @ViewChild('carouselElement') carouselElementRef!: ElementRef<HTMLElement>;
 
   slides: CarouselSlide[] = [
     {
@@ -49,4 +54,18 @@ export class CarouselComponent {
 
   // Intervalo do autoplay em ms
   autoplayInterval = 5000;
+
+  ngAfterViewInit(): void {
+    // Inicializa o carrossel manualmente — o Bootstrap JS faz sua auto-inicialização
+    // uma única vez, no carregamento da página. Como o carrossel é renderizado pelo
+    // Angular (SPA), ele muitas vezes ainda não existe nesse momento, então o
+    // autoplay não "pega" sozinho. Criar a instância aqui garante que funcione.
+    new bootstrap.Carousel(this.carouselElementRef.nativeElement, {
+      interval: this.autoplayInterval,
+      ride: 'carousel',
+      wrap: true,
+      touch: true,
+      pause: false
+    });
+  }
 }
