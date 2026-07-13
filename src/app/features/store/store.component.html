@@ -1,0 +1,82 @@
+<ng-container *ngIf="store; else storeNotFound">
+
+  <!-- Cabeçalho da loja -->
+  <div class="mdm-store-header">
+    <div class="mdm-store-cover" [style.background-image]="store.coverPath ? 'url(' + store.coverPath + ')' : null">
+      <div class="mdm-store-logo">
+        <img *ngIf="store.logoPath" [src]="store.logoPath" [alt]="store.name">
+        <span *ngIf="!store.logoPath">{{ store.initials }}</span>
+      </div>
+    </div>
+
+    <div class="mdm-store-info container">
+      <div class="mdm-store-name">{{ store.name }}</div>
+      <div class="mdm-store-rating">
+        <i *ngFor="let star of getStars(store.rating)" class="bi" [ngClass]="getStarIcon(star)"></i>
+        <span class="mdm-store-rating-value">{{ store.rating.toFixed(1) }} · {{ storeCategories.length }} categorias</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filtro de categorias (só as que essa loja tem) -->
+  <div class="mdm-category-filter">
+    <div class="container mdm-category-filter-inner">
+      <button
+        type="button"
+        class="mdm-filter-pill"
+        [class.active]="activeCategoryId === null"
+        (click)="selectCategory(null)">
+        Todos
+      </button>
+      <button
+        *ngFor="let category of storeCategories"
+        type="button"
+        class="mdm-filter-pill"
+        [class.active]="activeCategoryId === category.id"
+        (click)="selectCategory(category.id)">
+        {{ category.name }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Grade de produtos -->
+  <div class="container mdm-products-section">
+    <div class="row row-cols-2 row-cols-md-3 g-3" *ngIf="products.length > 0; else noProducts">
+      <div class="col" *ngFor="let product of products">
+        <div class="mdm-product-card" [class.mdm-out-of-stock]="!product.inStock">
+
+          <div class="mdm-product-image" [style.background-image]="product.imagePath ? 'url(' + product.imagePath + ')' : null">
+            <span *ngIf="!product.imagePath" class="mdm-product-placeholder">[ PRODUTO ]</span>
+            <span *ngIf="!product.inStock" class="mdm-out-of-stock-badge">Esgotado</span>
+          </div>
+
+          <div class="mdm-product-info">
+            <div class="mdm-product-name">{{ product.name }}</div>
+            <div class="mdm-product-price" *ngIf="!product.discountPrice">
+              R$ {{ product.price.toFixed(2) }}
+            </div>
+            <div class="mdm-product-price-row" *ngIf="product.discountPrice">
+              <span class="mdm-product-price-old">R$ {{ product.price.toFixed(2) }}</span>
+              <span class="mdm-product-price">R$ {{ product.discountPrice.toFixed(2) }}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noProducts>
+      <div class="mdm-empty-state">
+        Nenhum produto encontrado nessa categoria.
+      </div>
+    </ng-template>
+  </div>
+
+</ng-container>
+
+<ng-template #storeNotFound>
+  <div class="container mdm-not-found">
+    <p>Loja não encontrada.</p>
+    <a routerLink="/">Voltar para a Home</a>
+  </div>
+</ng-template>

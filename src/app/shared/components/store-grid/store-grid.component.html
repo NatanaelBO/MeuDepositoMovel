@@ -1,0 +1,55 @@
+<section class="mdm-stores-section">
+  <div class="container">
+
+    <div class="mdm-section-heading">
+      <span class="mdm-heading-bar"></span>
+      <h2 class="mdm-heading-title">
+        Lojas
+        <span *ngIf="activeCategoryName" class="mdm-filter-label">
+          em {{ activeCategoryName }}
+        </span>
+      </h2>
+      <button
+        *ngIf="activeCategoryId"
+        type="button"
+        class="mdm-clear-filter"
+        (click)="clearFilter()">
+        Limpar filtro ✕
+      </button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 g-3" *ngIf="stores.length > 0; else emptyState">
+      <div class="col" *ngFor="let store of stores">
+        <a [routerLink]="['/loja', store.id]" class="mdm-store-card">
+
+          <div class="mdm-store-cover" [style.background-image]="store.coverPath ? 'url(' + store.coverPath + ')' : null">
+            <div class="mdm-store-logo">
+              <img *ngIf="store.logoPath" [src]="store.logoPath" [alt]="store.name">
+              <span *ngIf="!store.logoPath">{{ store.initials }}</span>
+            </div>
+          </div>
+
+          <div class="mdm-store-info">
+            <div class="mdm-store-name">{{ store.name }}</div>
+            <div class="mdm-store-rating">
+              <i
+                *ngFor="let star of getStars(store.rating)"
+                class="bi"
+                [ngClass]="getStarIcon(star)">
+              </i>
+              <span class="mdm-store-rating-value">{{ store.rating.toFixed(1) }}</span>
+            </div>
+          </div>
+
+        </a>
+      </div>
+    </div>
+
+    <ng-template #emptyState>
+      <div class="mdm-empty-state">
+        Nenhuma loja encontrada para essa categoria ainda.
+      </div>
+    </ng-template>
+
+  </div>
+</section>

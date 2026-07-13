@@ -1,0 +1,141 @@
+/* ===== MDM Store Grid — estilo industrial ===== */
+/* Paleta: Azul #111184 | Amarelo #FFDE21 | Cinza claro #F8FAFC */
+
+.mdm-stores-section {
+  padding: 24px 0;
+}
+
+.mdm-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mdm-heading-bar {
+  width: 6px;
+  height: 22px;
+  background-color: #FFDE21;
+}
+
+.mdm-heading-title {
+  color: #111184;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.mdm-filter-label {
+  color: #5A5A7A;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 0.9rem;
+  letter-spacing: normal;
+}
+
+.mdm-clear-filter {
+  margin-left: auto;
+  background: none;
+  border: 2px solid #111184;
+  color: #111184;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.mdm-clear-filter:hover {
+  background-color: #111184;
+  color: #FFFFFF;
+}
+
+.mdm-empty-state {
+  background-color: #FFFFFF;
+  border: 2px dashed #111184;
+  padding: 32px;
+  text-align: center;
+  color: #5A5A7A;
+  font-size: 0.9rem;
+}
+
+.mdm-store-card {
+  display: block;
+  background-color: #FFFFFF;
+  border: 2px solid #111184;
+  border-radius: 0; /* sem cantos arredondados */
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.mdm-store-card:hover,
+.mdm-store-card:focus {
+  border-color: #FFDE21;
+}
+
+.mdm-store-cover {
+  height: 120px;
+  background-color: #3A3AA0; /* aparece se ainda não houver coverPath */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #111184;
+}
+
+.mdm-store-logo {
+  width: 64px;
+  height: 64px;
+  background-color: #111184;
+  border: 2px solid #FFDE21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFDE21;
+  font-weight: 700;
+  font-size: 1.375rem;
+  overflow: hidden;
+}
+
+.mdm-store-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.mdm-store-info {
+  padding: 16px;
+}
+
+.mdm-store-name {
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.mdm-store-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.mdm-store-rating i {
+  color: #FFDE21;
+  font-size: 0.8rem;
+}
+
+.mdm-store-rating-value {
+  color: #5A5A7A;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 6px;
+}

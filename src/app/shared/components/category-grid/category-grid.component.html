@@ -8,7 +8,10 @@
 
     <div class="row row-cols-2 row-cols-md-4 g-3">
       <div class="col" *ngFor="let category of categories">
-        <a [routerLink]="category.link" class="mdm-category-card">
+        <a
+          [routerLink]="['/']"
+          [queryParams]="{ categoria: category.id }"
+          class="mdm-category-card">
           <div class="mdm-category-icon-wrapper">
             <i class="bi" [ngClass]="category.icon"></i>
           </div>
