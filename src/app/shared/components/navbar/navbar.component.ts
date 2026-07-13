@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CategoryService, Category } from '../../../core/services/category.service';
+import { AuthService } from '../../../core/services/auth.service';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,16 +13,12 @@ import { CategoryService, Category } from '../../../core/services/category.servi
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  cartItemCount = 0; // TODO: conectar ao CartService
-  isLoggedIn = false; // TODO: conectar ao AuthService
-
-  categories: Category[];
-
   searchTerm = '';
 
-  constructor(private categoryService: CategoryService) {
-    this.categories = this.categoryService.getCategories();
-  }
+  constructor(
+    public authService: AuthService,
+    public cartService: CartService
+  ) {}
 
   onSearch(): void {
     if (!this.searchTerm.trim()) {
@@ -29,5 +26,9 @@ export class NavbarComponent {
     }
     // TODO: navegar para /produtos?busca=searchTerm
     console.log('Buscando por:', this.searchTerm);
+  }
+
+  onLogout(): void {
+    this.authService.logout();
   }
 }
