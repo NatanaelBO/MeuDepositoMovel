@@ -1,0 +1,110 @@
+/* ===== MDM Category Grid — estilo industrial ===== */
+/* Paleta: Azul #111184 | Amarelo #FFDE21 | Cinza claro #F8FAFC */
+
+.mdm-categories-section {
+  padding: 24px 0;
+}
+
+.mdm-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mdm-heading-bar {
+  width: 6px;
+  height: 22px;
+  background-color: #FFDE21;
+}
+
+.mdm-heading-title {
+  color: #111184;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.mdm-category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  border: 2px solid #111184;
+  border-radius: 0; /* sem cantos arredondados */
+  padding: 24px 12px;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.mdm-category-card:hover,
+.mdm-category-card:focus {
+  background-color: #111184;
+  border-color: #0A0A6B;
+}
+
+.mdm-category-card:hover .mdm-category-icon-wrapper,
+.mdm-category-card:focus .mdm-category-icon-wrapper {
+  background-color: #FFDE21;
+}
+
+.mdm-category-card:hover .mdm-category-icon-wrapper i,
+.mdm-category-card:focus .mdm-category-icon-wrapper i {
+  color: #111184;
+}
+
+.mdm-category-card:hover .mdm-category-name,
+.mdm-category-card:focus .mdm-category-name {
+  color: #FFFFFF;
+}
+
+.mdm-category-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  background-color: #111184;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.mdm-category-icon-wrapper i {
+  color: #FFDE21;
+  font-size: 1.5rem;
+  transition: color 0.15s ease;
+}
+
+.mdm-category-name {
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3px;
+  transition: color 0.15s ease;
+}
+
+/* Mobile: cards um pouco menores */
+@media (max-width: 575.98px) {
+  .mdm-category-card {
+    padding: 18px 8px;
+  }
+
+  .mdm-category-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .mdm-category-icon-wrapper i {
+    font-size: 1.25rem;
+  }
+
+  .mdm-category-name {
+    font-size: 0.7rem;
+  }
+}

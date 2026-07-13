@@ -1,7 +1,8 @@
-import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CategoryService, Category } from '../../../core/services/category.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,16 +15,13 @@ export class NavbarComponent {
   cartItemCount = 0; // TODO: conectar ao CartService
   isLoggedIn = false; // TODO: conectar ao AuthService
 
-  categories: string[] = [
-    'Cimento e argamassa',
-    'Tijolos e blocos',
-    'Ferragens',
-    'Tintas',
-    'Hidráulica',
-    'Elétrica'
-  ];
+  categories: Category[];
 
   searchTerm = '';
+
+  constructor(private categoryService: CategoryService) {
+    this.categories = this.categoryService.getCategories();
+  }
 
   onSearch(): void {
     if (!this.searchTerm.trim()) {
