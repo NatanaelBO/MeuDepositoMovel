@@ -1,0 +1,191 @@
+/* ===== MDM Cart Page — estilo industrial ===== */
+/* Paleta: Azul #111184 | Amarelo #FFDE21 | Cinza claro #F8FAFC */
+
+.mdm-cart-page {
+  padding: 24px 16px 64px;
+}
+
+.mdm-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mdm-heading-bar {
+  width: 6px;
+  height: 22px;
+  background-color: #FFDE21;
+}
+
+.mdm-heading-title {
+  color: #111184;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.mdm-cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.mdm-cart-item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto auto auto;
+  align-items: center;
+  gap: 16px;
+  background-color: #FFFFFF;
+  border: 2px solid #111184;
+  padding: 12px;
+}
+
+.mdm-cart-item-image {
+  width: 64px;
+  height: 64px;
+  background-color: #FFFFFF;
+  border: 2px solid #E5E7EB;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mdm-cart-item-name {
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.mdm-cart-item-price {
+  color: #5A5A7A;
+  font-size: 0.75rem;
+}
+
+.mdm-cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mdm-qty-btn {
+  width: 26px;
+  height: 26px;
+  background-color: #FFFFFF;
+  border: 2px solid #111184;
+  color: #111184;
+  font-weight: 700;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mdm-qty-btn:hover {
+  background-color: #111184;
+  color: #FFFFFF;
+}
+
+.mdm-qty-value {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #111184;
+  font-size: 0.85rem;
+}
+
+.mdm-cart-item-subtotal {
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.mdm-remove-btn {
+  background: none;
+  border: none;
+  color: #D32F2F;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mdm-cart-summary {
+  background-color: #FFFFFF;
+  border: 2px solid #111184;
+  padding: 20px;
+  max-width: 340px;
+  margin-left: auto;
+}
+
+.mdm-cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #111184;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.mdm-cart-total-value {
+  font-size: 1.25rem;
+}
+
+.mdm-checkout-btn {
+  width: 100%;
+  background-color: #FFDE21;
+  color: #0A0A6B;
+  border: 2px solid #0A0A6B;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.mdm-checkout-btn:hover {
+  background-color: #E8C81E;
+}
+
+.mdm-empty-state {
+  background-color: #FFFFFF;
+  border: 2px dashed #111184;
+  padding: 48px 24px;
+  text-align: center;
+  color: #5A5A7A;
+  font-size: 0.9rem;
+}
+
+.mdm-empty-state a {
+  display: block;
+  margin-top: 12px;
+  color: #111184;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Mobile: empilha o card do item */
+@media (max-width: 575.98px) {
+  .mdm-cart-item {
+    grid-template-columns: 56px 1fr auto;
+    grid-template-areas:
+      "image info remove"
+      "image quantity subtotal";
+    row-gap: 8px;
+  }
+
+  .mdm-cart-item-image { grid-area: image; }
+  .mdm-cart-item-info { grid-area: info; }
+  .mdm-cart-item-quantity { grid-area: quantity; }
+  .mdm-cart-item-subtotal { grid-area: subtotal; justify-self: end; }
+  .mdm-remove-btn { grid-area: remove; justify-self: end; }
+}

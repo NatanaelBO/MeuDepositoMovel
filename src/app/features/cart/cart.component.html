@@ -1,0 +1,59 @@
+<div class="container mdm-cart-page">
+
+  <div class="mdm-section-heading">
+    <span class="mdm-heading-bar"></span>
+    <h1 class="mdm-heading-title">Meu Carrinho</h1>
+  </div>
+
+  <div *ngIf="cartService.items().length > 0; else emptyCart">
+
+    <div class="mdm-cart-list">
+      <div class="mdm-cart-item" *ngFor="let item of cartService.items()">
+
+        <div
+          class="mdm-cart-item-image"
+          [style.background-image]="item.product.imagePath ? 'url(' + item.product.imagePath + ')' : null">
+        </div>
+
+        <div class="mdm-cart-item-info">
+          <div class="mdm-cart-item-name">{{ item.product.name }}</div>
+          <div class="mdm-cart-item-price">R$ {{ getItemPrice(item).toFixed(2) }} / un.</div>
+        </div>
+
+        <div class="mdm-cart-item-quantity">
+          <button type="button" class="mdm-qty-btn" (click)="decreaseQuantity(item)">−</button>
+          <span class="mdm-qty-value">{{ item.quantity }}</span>
+          <button type="button" class="mdm-qty-btn" (click)="increaseQuantity(item)">+</button>
+        </div>
+
+        <div class="mdm-cart-item-subtotal">
+          R$ {{ getItemSubtotal(item).toFixed(2) }}
+        </div>
+
+        <button type="button" class="mdm-remove-btn" (click)="removeItem(item)" aria-label="Remover item">
+          ✕
+        </button>
+
+      </div>
+    </div>
+
+    <div class="mdm-cart-summary">
+      <div class="mdm-cart-total-row">
+        <span>Total</span>
+        <span class="mdm-cart-total-value">R$ {{ cartService.totalPrice().toFixed(2) }}</span>
+      </div>
+      <button type="button" class="mdm-checkout-btn" (click)="onCheckout()">
+        Finalizar Compra
+      </button>
+    </div>
+
+  </div>
+
+  <ng-template #emptyCart>
+    <div class="mdm-empty-state">
+      Seu carrinho está vazio.
+      <a routerLink="/">Ver lojas</a>
+    </div>
+  </ng-template>
+
+</div>

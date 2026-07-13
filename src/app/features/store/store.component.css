@@ -181,6 +181,31 @@
   text-decoration: line-through;
 }
 
+.mdm-add-to-cart-btn {
+  width: 100%;
+  margin-top: 8px;
+  background-color: #FFDE21;
+  color: #0A0A6B;
+  border: 2px solid #0A0A6B;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.mdm-add-to-cart-btn:hover:not(:disabled) {
+  background-color: #E8C81E;
+}
+
+.mdm-add-to-cart-btn:disabled {
+  background-color: #E5E7EB;
+  color: #9CA3AF;
+  border-color: #D1D5DB;
+  cursor: not-allowed;
+}
+
 .mdm-empty-state {
   background-color: #FFFFFF;
   border: 2px dashed #111184;

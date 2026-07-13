@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { StoreService, Store } from '../../core/services/store.service';
 import { CategoryService, Category } from '../../core/services/category.service';
 import { ProductService, Product } from '../../core/services/product.service';
+import { CartService } from '../../core/services/cart.service';
 
 type StarType = 'full' | 'half' | 'empty';
 
@@ -25,7 +26,8 @@ export class StoreComponent implements OnInit {
     private route: ActivatedRoute,
     private storeService: StoreService,
     private categoryService: CategoryService,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -61,6 +63,10 @@ export class StoreComponent implements OnInit {
     } else {
       this.products = this.productService.getProductsByStore(this.store.id);
     }
+  }
+
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
   }
 
   getStars(rating: number): StarType[] {

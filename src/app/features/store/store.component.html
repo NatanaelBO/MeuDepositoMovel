@@ -59,6 +59,13 @@
               <span class="mdm-product-price-old">R$ {{ product.price.toFixed(2) }}</span>
               <span class="mdm-product-price">R$ {{ product.discountPrice.toFixed(2) }}</span>
             </div>
+            <button
+              type="button"
+              class="mdm-add-to-cart-btn"
+              [disabled]="!product.inStock"
+              (click)="addToCart(product)">
+              {{ product.inStock ? 'Adicionar ao Carrinho' : 'Esgotado' }}
+            </button>
           </div>
 
         </div>
